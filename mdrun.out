@@ -1,0 +1,401 @@
+                      :-) GROMACS - gmx mdrun, 2021.1 (-:
+
+                            GROMACS is written by:
+     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+        Szilard Pall               Sander Pronk              Roland Schulz       
+       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+       Peter Tieleman              Jon Vincent              Teemu Virolainen     
+     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2021.1
+Executable:   /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/bin/gmx_mpi
+Data prefix:  /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1 (source tree)
+Working dir:  /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/tests/freeenergy/transformAtoB
+Command line:
+  gmx_mpi mdrun -notunepme
+
+Reading file topol.tpr, VERSION 2021.1 (single precision)
+Changing nstlist from 10 to 40, rlist from 0.903 to 1.006
+
+Using 8 MPI processes
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 6 OpenMP threads per MPI process
+
+starting mdrun 'Tryptophan Side Chain Analog'
+60 steps,      0.1 ps.
+[stellar-intel:2324300:0:2324300] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324301:0:2324301] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324304:0:2324304] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324307:0:2324307] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324296:0:2324296] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324297:0:2324297] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324298:0:2324298] Caught signal 8 (Floating point exception: floating-point overflow)
+[stellar-intel:2324299:0:2324299] Caught signal 8 (Floating point exception: floating-point overflow)
+==== backtrace (tid:2324298) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324298] *** Process received signal ***
+[stellar-intel:2324298] Signal: Floating point exception (8)
+[stellar-intel:2324298] Signal code:  (-6)
+[stellar-intel:2324298] Failing at address: 0x24b440023774a
+[stellar-intel:2324298] [ 0] ==== backtrace (tid:2324307) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324307] *** Process received signal ***
+[stellar-intel:2324307] Signal: Floating point exception (8)
+[stellar-intel:2324307] Signal code:  (-6)
+[stellar-intel:2324307] Failing at address: 0x24b4400237753
+[stellar-intel:2324307] [ 0] ==== backtrace (tid:2324304) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324304] *** Process received signal ***
+[stellar-intel:2324304] Signal: Floating point exception (8)
+[stellar-intel:2324304] Signal code:  (-6)
+[stellar-intel:2324304] Failing at address: 0x24b4400237750
+[stellar-intel:2324304] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x14a476cacb30]
+[stellar-intel:2324304] [ 1] ==== backtrace (tid:2324299) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324299] *** Process received signal ***
+[stellar-intel:2324299] Signal: Floating point exception (8)
+[stellar-intel:2324299] Signal code:  (-6)
+[stellar-intel:2324299] Failing at address: 0x24b440023774b
+[stellar-intel:2324299] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x14e2d26d6b30]
+[stellar-intel:2324299] [ 1] /usr/lib64/libpthread.so.0(+0x12b30)[0x14df782bdb30]
+[stellar-intel:2324298] [ 1] /usr/lib64/libpthread.so.0(+0x12b30)[0x153442604b30]
+[stellar-intel:2324307] [ 1] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x14a4792c98f9]
+[stellar-intel:2324304] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x14e2d4cf38f9]
+[stellar-intel:2324299] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x14df7a8da8f9]
+[stellar-intel:2324298] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x153444c218f9]
+[stellar-intel:2324307] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x14a4792ecae6]
+[stellar-intel:2324304] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x153444c44ae6]
+[stellar-intel:2324307] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x14df7a8fdae6]
+[stellar-intel:2324298] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x14e2d4d16ae6]
+[stellar-intel:2324299] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x153444c0cd80]
+[stellar-intel:2324307] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x14a4792b4d80]
+[stellar-intel:2324304] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x14e2d4cded80]
+[stellar-intel:2324299] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x14df7a8c5d80]
+[stellar-intel:2324298] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x14a4795af353]
+[stellar-intel:2324304] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x153444f07353]
+[stellar-intel:2324307] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x14e2d4fd9353]
+[stellar-intel:2324299] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x14df7abc0353]
+[stellar-intel:2324298] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x14a4795af862]
+[stellar-intel:2324304] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x153444f07862]
+[stellar-intel:2324307] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x14df7abc0862]
+[stellar-intel:2324298] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x14e2d4fd9862]
+[stellar-intel:2324299] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x14a4795b103a]
+[stellar-intel:2324304] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x153444f0903a]
+[stellar-intel:2324307] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x14df7abc203a]
+[stellar-intel:2324298] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x14e2d4fdb03a]
+[stellar-intel:2324299] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x153444f120f0]
+[stellar-intel:2324307] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x14a4795ba0f0]
+[stellar-intel:2324304] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x14df7abcb0f0]
+[stellar-intel:2324298] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x14e2d4fe40f0]
+[stellar-intel:2324299] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x14a4795c2b8d]
+[stellar-intel:2324304] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x14df7abd3b8d]
+[stellar-intel:2324298] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x153444f1ab8d]
+[stellar-intel:2324307] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x14e2d4fecb8d]
+[stellar-intel:2324299] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x14df7aa4f9c8]
+[stellar-intel:2324298] [10] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x153444d969c8]
+[stellar-intel:2324307] [10] gmx_mpi[0x418def]
+[stellar-intel:2324298] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324298] [12] gmx_mpi[0x418def]
+[stellar-intel:2324307] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324307] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x14a47943e9c8]
+[stellar-intel:2324304] [10] gmx_mpi[0x418def]
+[stellar-intel:2324304] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324304] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x14e2d4e689c8]
+[stellar-intel:2324299] [10] gmx_mpi[0x418def]
+[stellar-intel:2324299] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324299] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x14e2d4859b09]
+[stellar-intel:2324299] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x153444787b09]
+[stellar-intel:2324307] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x14a478e2fb09]
+[stellar-intel:2324304] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x14df7a440b09]
+[stellar-intel:2324298] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x14e2d485b611]
+[stellar-intel:2324299] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324299] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x14e2d2324803]
+[stellar-intel:2324299] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324299] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x153444789611]
+[stellar-intel:2324307] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324307] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x153442252803]
+[stellar-intel:2324307] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324307] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x14a478e31611]
+[stellar-intel:2324304] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324304] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x14a4768fa803]
+[stellar-intel:2324304] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324304] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x14df7a442611]
+[stellar-intel:2324298] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324298] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x14df77f0b803]
+[stellar-intel:2324298] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324298] *** End of error message ***
+==== backtrace (tid:2324301) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324301] *** Process received signal ***
+[stellar-intel:2324301] Signal: Floating point exception (8)
+[stellar-intel:2324301] Signal code:  (-6)
+[stellar-intel:2324301] Failing at address: 0x24b440023774d
+[stellar-intel:2324301] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x14d49909fb30]
+[stellar-intel:2324301] [ 1] ==== backtrace (tid:2324297) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324297] *** Process received signal ***
+[stellar-intel:2324297] Signal: Floating point exception (8)
+[stellar-intel:2324297] Signal code:  (-6)
+[stellar-intel:2324297] Failing at address: 0x24b4400237749
+[stellar-intel:2324297] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x14ac601aab30]
+[stellar-intel:2324297] [ 1] ==== backtrace (tid:2324300) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324300] *** Process received signal ***
+[stellar-intel:2324300] Signal: Floating point exception (8)
+[stellar-intel:2324300] Signal code:  (-6)
+[stellar-intel:2324300] Failing at address: 0x24b440023774c
+[stellar-intel:2324300] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x150a07040b30]
+[stellar-intel:2324300] [ 1] ==== backtrace (tid:2324296) ====
+ 0 0x0000000000056f39 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000012b30 .annobin_sigaction.c()  sigaction.c:0
+ 2 0x00000000013758f9 extract_binr()  ???:0
+ 3 0x0000000001398ae6 global_stat()  ???:0
+ 4 0x0000000001360d80 compute_globals()  ???:0
+ 5 0x000000000165b353 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::compute()  ???:0
+ 6 0x000000000165b862 gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}::operator()()  ???:0
+ 7 0x000000000165d03a std::_Function_handler<void (), gmx::ComputeGlobalsElement<(gmx::ComputeGlobalsAlgorithm)1>::scheduleTask(long, double, std::function<void (std::function<void ()>)> const&)::{lambda()#2}>::_M_invoke()  ???:0
+ 8 0x00000000016660f0 std::function<void ()>::operator()()  ???:0
+ 9 0x000000000166eb8d gmx::ModularSimulator::run()  ???:0
+10 0x00000000014ea9c8 gmx::Mdrunner::mdrunner()  ???:0
+11 0x0000000000418def gmx::gmx_mdrun()  ???:0
+12 0x00000000004188f2 gmx::gmx_mdrun()  ???:0
+13 0x0000000000edbb09 gmx::(anonymous namespace)::CMainCommandLineModule::run()  cmdlinemodulemanager.cpp:0
+14 0x0000000000edd611 gmx::CommandLineModuleManager::run()  ???:0
+15 0x000000000041645c main()  ???:0
+16 0x0000000000023803 __libc_start_main()  ???:0
+17 0x000000000041630e _start()  ???:0
+=================================
+[stellar-intel:2324296] *** Process received signal ***
+[stellar-intel:2324296] Signal: Floating point exception (8)
+[stellar-intel:2324296] Signal code:  (-6)
+[stellar-intel:2324296] Failing at address: 0x24b4400237748
+[stellar-intel:2324296] [ 0] /usr/lib64/libpthread.so.0(+0x12b30)[0x152d82949b30]
+[stellar-intel:2324296] [ 1] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x14d49b6bc8f9]
+[stellar-intel:2324301] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x14ac627c78f9]
+[stellar-intel:2324297] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x150a0965d8f9]
+[stellar-intel:2324300] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z12extract_binrP5t_biniiPf+0x66)[0x152d84f668f9]
+[stellar-intel:2324296] [ 2] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x14d49b6dfae6]
+[stellar-intel:2324301] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x14ac627eaae6]
+[stellar-intel:2324297] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x150a09680ae6]
+[stellar-intel:2324300] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z11global_statPK15gmx_global_statPK9t_commrecP14gmx_enerdata_tPA3_fS8_PK10t_inputrecP14gmx_ekindata_tPKN3gmx11ConstraintsEP5t_vcmiPfPibi+0x9dc)[0x152d84f89ae6]
+[stellar-intel:2324296] [ 3] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x14d49b6a7d80]
+[stellar-intel:2324301] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x14ac627b2d80]
+[stellar-intel:2324297] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x150a09648d80]
+[stellar-intel:2324300] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x14d49b9a2353]
+[stellar-intel:2324301] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_Z15compute_globalsP15gmx_global_statP9t_commrecPK10t_inputrecP10t_forcerecP14gmx_ekindata_tN3gmx8ArrayRefIKNSA_11BasicVectorIfEEEESF_PA3_KfPK9t_mdatomsP6t_nrnbP5t_vcmP13gmx_wallcycleP14gmx_enerdata_tPA3_fSV_SV_SV_PNSA_11ConstraintsEPNSA_19SimulationSignallerESI_PiPbi+0x32a)[0x152d84f51d80]
+[stellar-intel:2324296] [ 4] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x14ac62aad353]
+[stellar-intel:2324297] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x14d49b9a2862]
+[stellar-intel:2324301] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x150a09943353]
+[stellar-intel:2324300] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE7computeEljPNS_19SimulationSignallerEbb+0x341)[0x152d8524c353]
+[stellar-intel:2324296] [ 5] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x14ac62aad862]
+[stellar-intel:2324297] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x14d49b9a403a]
+[stellar-intel:2324301] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x150a09943862]
+[stellar-intel:2324300] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZZN3gmx21ComputeGlobalsElementILNS_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS3_IFvvEEEEENKUlvE0_clEv+0x52)[0x152d8524c862]
+[stellar-intel:2324296] [ 6] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x14ac62aaf03a]
+[stellar-intel:2324297] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x14d49b9ad0f0]
+[stellar-intel:2324301] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x150a0994503a]
+[stellar-intel:2324300] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNSt17_Function_handlerIFvvEZN3gmx21ComputeGlobalsElementILNS1_23ComputeGlobalsAlgorithmE1EE12scheduleTaskEldRKSt8functionIFvS5_IS0_EEEEUlvE0_E9_M_invokeERKSt9_Any_data+0x20)[0x152d8524e03a]
+[stellar-intel:2324296] [ 7] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x14ac62ab80f0]
+[stellar-intel:2324297] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x14d49b9b5b8d]
+[stellar-intel:2324301] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x150a0994e0f0]
+[stellar-intel:2324300] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZNKSt8functionIFvvEEclEv+0x32)[0x152d852570f0]
+[stellar-intel:2324296] [ 8] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x14ac62ac0b8d]
+[stellar-intel:2324297] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x150a09956b8d]
+[stellar-intel:2324300] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx16ModularSimulator3runEv+0x175)[0x152d8525fb8d]
+[stellar-intel:2324296] [ 9] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x14d49b8319c8]
+[stellar-intel:2324301] [10] gmx_mpi[0x418def]
+[stellar-intel:2324301] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324301] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x14ac6293c9c8]
+[stellar-intel:2324297] [10] gmx_mpi[0x418def]
+[stellar-intel:2324297] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324297] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x14d49b222b09]
+[stellar-intel:2324301] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x150a097d29c8]
+[stellar-intel:2324300] [10] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx8Mdrunner8mdrunnerEv+0x4640)[0x152d850db9c8]
+[stellar-intel:2324296] [10] gmx_mpi[0x418def]
+[stellar-intel:2324296] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324296] [12] gmx_mpi[0x418def]
+[stellar-intel:2324300] [11] gmx_mpi[0x4188f2]
+[stellar-intel:2324300] [12] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x14ac6232db09]
+[stellar-intel:2324297] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x14d49b224611]
+[stellar-intel:2324301] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324301] [15] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x150a091c3b09]
+[stellar-intel:2324300] [13] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x14d498ced803]
+[stellar-intel:2324301] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324301] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(+0xedbb09)[0x152d84accb09]
+[stellar-intel:2324296] [13] /home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x14ac6232f611]
+[stellar-intel:2324297] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324297] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x14ac5fdf8803]
+[stellar-intel:2324297] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324297] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x150a091c5611]
+[stellar-intel:2324300] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324300] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x150a06c8e803]
+[stellar-intel:2324300] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324300] *** End of error message ***
+/home/jdh4/software/gmx_2021.1_combined/gromacs-2021.1/build/lib/libgromacs_mpi.so.6(_ZN3gmx24CommandLineModuleManager3runEiPPc+0x39d)[0x152d84ace611]
+[stellar-intel:2324296] [14] gmx_mpi[0x41645c]
+[stellar-intel:2324296] [15] /usr/lib64/libc.so.6(__libc_start_main+0xf3)[0x152d82597803]
+[stellar-intel:2324296] [16] gmx_mpi[0x41630e]
+[stellar-intel:2324296] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 4 with PID 0 on node stellar-intel exited on signal 8 (Floating point exception).
+--------------------------------------------------------------------------
